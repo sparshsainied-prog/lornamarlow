@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lorna Marlow · Sisters of the Tide</title>
+<meta name="description" content="A homepage idea made by Sparsh Saini for Lorna Marlow. Not her official site.">
+<meta property="og:title" content="Lorna Marlow · Sisters of the Tide (a homepage idea)">
+<meta property="og:description" content="A homepage idea made by Sparsh Saini for Lorna Marlow. Not her official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/lornamarlow/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/sky.jpg"><link rel="preload" as="image" href="img/sea.webp">
+<style>
+:root{--night:#23243a;--night2:#2e2f47;--cream:#f2f0e4;--pewter:#b8a392;--amber:#d9b48f;--soft:#a9a8b8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--night)}
+body{background:var(--night);color:var(--cream);font:1.18rem/1.65 "Cormorant Garamond",Georgia,serif;font-weight:500;-webkit-font-smoothing:antialiased}
+a{color:var(--amber)}
+.sans{font-family:"Jost",system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;font-weight:500}
+.strip{background:#161728;color:var(--soft);font:400 .85rem "Jost",sans-serif;text-align:center;padding:.5rem 16px}
+details.nav{position:fixed;z-index:30;left:14px;bottom:14px}
+details.nav summary{list-style:none;cursor:pointer;background:var(--cream);color:var(--night);padding:.65rem 1.1rem;font:500 .78rem "Jost",sans-serif;letter-spacing:.2em;text-transform:uppercase}
+details.nav summary::-webkit-details-marker{display:none}
+details.nav div{position:absolute;bottom:100%;left:0;margin-bottom:6px;background:var(--cream);display:flex;flex-direction:column;min-width:180px}
+details.nav a{color:var(--night);text-decoration:none;padding:.7rem 1.1rem;font:500 .78rem "Jost",sans-serif;letter-spacing:.2em;text-transform:uppercase;border-top:1px solid rgba(35,36,58,.15)}
+@media(min-width:900px){details.nav{bottom:auto;top:52px;left:auto;right:22px}details.nav div{bottom:auto;top:100%;margin:6px 0 0;right:0;left:auto}}
+.hero{position:relative;height:340vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#1c1d30}
+.book{position:absolute;left:0;top:0;width:var(--bw);aspect-ratio:1515/2334;overflow:visible}
+.cam{position:absolute;inset:0;transform-origin:56% 74%;will-change:transform}
+.cam img{position:absolute;display:block;left:0;width:100%;height:auto;will-change:transform,opacity}
+#sky{top:0}#sea{top:47.5%}#rocks{top:69.97%}
+#title{left:8.78%;top:10.07%;width:82.05%;opacity:0}
+.edge{position:absolute;inset:0;pointer-events:none;box-shadow:0 0 0 100vmax #1c1d30;clip-path:inset(0)}
+.open{position:absolute;left:20px;right:20px;top:50%;transform:translateY(-50%);text-align:center;will-change:opacity;z-index:3}
+.open p{font-style:italic;font-size:clamp(1.7rem,7vw,3.3rem);line-height:1.18;text-shadow:0 2px 24px #000}
+.copy{position:absolute;z-index:4;left:20px;right:20px;bottom:84px;opacity:0;will-change:opacity;text-align:center}
+.copy h1{font-weight:600;font-size:clamp(1.9rem,8vw,3rem);line-height:1.04}
+.copy p{color:var(--pewter);margin:.4rem 0 1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.btn{font:500 .78rem "Jost",sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--night);background:var(--cream);padding:.85rem 1.3rem}
+.btn.o{background:transparent;color:var(--cream);border:1px solid var(--pewter)}
+@media(max-width:899px){.stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(transparent,rgba(24,25,42,.96) 55%);opacity:var(--sc,0);pointer-events:none;z-index:3}}
+@media(min-width:900px){.copy{left:auto;right:7vw;width:34vw;top:50%;bottom:auto;transform:translateY(-50%);text-align:left}.btns{justify-content:flex-start}}
+section.s{max-width:1040px;margin:0 auto;padding:5.5rem 20px}
+h2{font-weight:600;font-size:clamp(2rem,6vw,3.1rem);line-height:1.05;margin-bottom:1.5rem}
+.bk{display:grid;gap:2rem;align-items:start}
+.bk img{width:min(270px,70%);display:block;box-shadow:0 20px 44px rgba(0,0,0,.55)}
+@media(min-width:780px){.bk{grid-template-columns:300px 1fr;gap:3.5rem}.bk img{width:100%}}
+.bk p{margin-bottom:1rem;max-width:58ch}
+.q{font-style:italic;color:var(--amber);border-left:2px solid var(--amber);padding-left:1rem;margin:1.2rem 0}
+.prev{margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(184,163,146,.3)}
+.about{display:grid;gap:2rem}
+@media(min-width:820px){.about{grid-template-columns:1fr 280px;gap:3.5rem}}
+.about p{margin-bottom:1rem;max-width:58ch}
+.about img{width:100%;max-width:280px;display:block}
+.ledger{list-style:none;border-top:1px solid rgba(184,163,146,.4)}
+.ledger li{display:grid;grid-template-columns:7.2rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(184,163,146,.4)}
+.ledger b{font:500 .8rem "Jost",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);padding-top:.35rem}
+.ledger em{display:block;color:var(--pewter)}
+.ledger li.top b,.ledger li.top strong{color:var(--cream)}
+.find{margin-top:2.5rem}
+footer{text-align:center;color:var(--soft);font:400 .85rem "Jost",sans-serif;padding:3rem 16px 6rem;border-top:1px solid rgba(184,163,146,.3)}
+@media (prefers-reduced-motion:reduce){.hero{height:auto}.stage{position:relative;height:auto;padding:2rem 20px 3rem}.book{position:relative;margin:0 auto 1.6rem;width:min(80vw,400px)}.cam{transform:none!important}.cam img{transform:none!important;opacity:1!important}.open{display:none}.copy{position:relative;opacity:1!important;transform:none!important;left:auto;right:auto;bottom:auto;top:auto;width:auto;text-align:center}.btns{justify-content:center}.stage::after{display:none}}
+</style>
+</head>
+<body>
+<div class="strip">A homepage idea made by Sparsh Saini for Lorna Marlow. Not her official site.</div>
+<details class="nav"><summary>Contents</summary><div><a href="#book">Sisters of the Tide</a><a href="#home">Finding Home</a><a href="#lorna">Lorna</a><a href="#meet">Come and find me</a></div></details>
+
+<header class="hero">
+  <div class="stage" id="stage">
+    <div class="open" id="open"><p>Some stories wait generations to be told.</p></div>
+    <div class="book" id="book" role="img" aria-label="The Sisters of the Tide cover: a stormy dusk sky over a grey sea breaking on dark Cornish rocks, with the title in cream capitals">
+      <div class="cam" id="cam">
+        <img id="sky" src="img/sky.jpg" alt="" width="1000" height="1000">
+        <img id="sea" src="img/sea.webp" alt="" width="1000" height="1000">
+        <img id="rocks" src="img/rocks.webp" alt="" width="1000" height="1000">
+        <img id="title" src="img/title.webp" alt="" width="1000" height="300">
+      </div>
+    </div>
+    <div class="copy" id="copy">
+      <h1>Sisters of the Tide</h1>
+      <p>Cornish romantic suspense by Lorna Marlow. Shortlisted for the RNA Debut Novel of the Year 2026.</p>
+      <div class="btns"><a class="btn" href="https://www.amazon.co.uk/dp/B0H83MMCNF">Buy the book</a><a class="btn o" href="#meet">Find me this month</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="s" id="book">
+  <h2>Sisters of the Tide</h2>
+  <div class="bk">
+    <img src="img/cover.jpg" alt="Sisters of the Tide cover" width="640" height="986" loading="lazy">
+    <div>
+      <p>Emily Foster has come to Cornwall to start again. In the old cottage at Gunwalloe, with the sea at her door and her past behind her, she hopes to rebuild a life shaken by betrayal. But the cottage is not quite the refuge she imagined. A lingering presence drifts through the house, bound to the land, the sea and an old injustice that reaches across the centuries.</p>
+      <p>At Penzance Museum, Emily, tasked with arranging an exhibition on witchcraft, reveals stories she cannot forget, of women swept away on a tide of suspicion by a world that feared what it could not control.</p>
+      <p class="q">Some stories wait generations to be told, and some voices, once awakened, cannot be silenced again.</p>
+      <p class="sans" style="color:var(--pewter)">Published 25 August 2026 in paperback and ebook</p>
+      <div class="btns" style="justify-content:flex-start;margin-top:1.2rem"><a class="btn" href="https://www.amazon.co.uk/dp/B0H83MMCNF">Amazon</a></div>
+    </div>
+  </div>
+  <div class="bk prev" id="home">
+    <img src="img/finding.jpg" alt="Finding Home cover" width="560" height="840" loading="lazy">
+    <div>
+      <h2 style="font-size:clamp(1.7rem,5vw,2.4rem)">Finding Home</h2>
+      <p>Her debut. In a world where silence can be deadly, Lucy Harrison is trapped in a dangerous marriage, her every move watched by a man who hides his cruelty behind a charming facade. When a mysterious inheritance offers a lifeline, she seizes the chance to flee.</p>
+      <p class="sans" style="color:var(--pewter)">Pegasus Publishers, August 2025</p>
+      <div class="btns" style="justify-content:flex-start;margin-top:1.2rem"><a class="btn o" href="https://www.waterstones.com/book/finding-home/lorna-marlow/9781837945160">Waterstones</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="lorna">
+  <h2>Lorna</h2>
+  <div class="about">
+    <div>
+      <p>I have always wanted to write. My office is full of box files crammed with half finished stories, but until recently life always seemed to get in the way. In 2022 I left a career in teaching to write full time.</p>
+      <p>All my books so far are set against the Cornish coastline. I can't live there. Being a Northamptonshire girl, I live about as far from the sea as it is possible to get in the UK, but in my imagination I visit the clifftops, bustling harbours and rock strewn shores every day.</p>
+      <p>My third novel is due in Autumn 2027, and my fourth is set in Northamptonshire, though my characters might need a little trip to Cornwall, just for fun.</p>
+    </div>
+    <img src="img/lorna.jpg" alt="Lorna Marlow" width="600" height="642" loading="lazy">
+  </div>
+</section>
+
+<section class="s" id="meet">
+  <h2>Come and find me</h2>
+  <ul class="ledger">
+    <li><b>Sat 7 Nov</b><span><strong>Author talk and book signing</strong><em>Volta Books, The Embankment, Wellingborough, 10am to 4pm</em></span></li>
+    <li class="top"><b>Sun 8 Nov</b><span><strong>Scribe Fest Christmas</strong><em>Sedgebrook Hall, 10am to 4pm</em></span></li>
+    <li><b>Tue 17 Nov</b><span><strong>Kettering U3A</strong><em>Open Door Church, Eden Centre, 1.30pm. Visitors welcome.</em></span></li>
+    <li><b>Fri 20 Nov</b><span><strong>Author talk and book signing</strong><em>Wellingborough Library, 2pm</em></span></li>
+    <li><b>Sat 21 Nov</b><span><strong>Isham Craft Fair</strong><em>11am to 3pm</em></span></li>
+    <li><b>12 and 19 Dec</b><span><strong>Pop up shop</strong><em>The Art Emporium, Newlands Shopping Centre, Kettering, 10am to 4pm</em></span></li>
+  </ul>
+  <p class="find">Newsletter and news: <a href="https://www.lornamarlow.co.uk">lornamarlow.co.uk</a>. Or find me on <a href="https://www.instagram.com/lornamarlowauthor/">Instagram</a> and <a href="https://www.facebook.com/profile.php?id=61551466703553">Facebook</a>.</p>
+</section>
+</main>
+<footer>A mockup made by Sparsh Saini for Lorna Marlow. Not affiliated, not live.</footer>
+<script>
+(()=>{const hero=document.querySelector('.hero'),stage=document.getElementById('stage'),book=document.getElementById('book'),cam=document.getElementById('cam'),sky=document.getElementById('sky'),sea=document.getElementById('sea'),title=document.getElementById('title'),open=document.getElementById('open'),copy=document.getElementById('copy');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+let W,H,bw,bh,rx,ry,ht,dx,dy,tick=false;const S=3.4,cl=v=>Math.max(0,Math.min(1,v)),eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function measure(){W=innerWidth;H=stage.clientHeight;const d=W>=900;bw=d?Math.min(H*.86/1.5406,W*.36):Math.min(W*.8,H*.62/1.5406);bh=bw*1.5406;
+ book.style.setProperty('--bw',bw+'px');rx=d?W*.3-bw/2:W/2-bw/2;ry=d?H/2-bh/2:H*.06;book.style.transform=`translate(${rx}px,${ry}px)`;
+ dx=(d?W*.3:W/2)-(rx+bw*.56);dy=H/2-(ry+bh*.74);ht=hero.offsetHeight-H;
+ book.style.clipPath=`inset(0)`;draw()}
+function draw(){tick=false;const p=cl((scrollY-hero.offsetTop)/ht);
+ const k=eio(cl(p/.64));
+ cam.style.transform=`translate(${dx*(1-k)}px,${dy*(1-k)}px) scale(${1+(S-1)*(1-k)})`;
+ // two swells come in over the rocks and draw back; the sea plane rides behind them
+ const sw=.5-.5*Math.cos(p*Math.PI*6);
+ sea.style.transform=`translateY(${-bh*.03*sw*(1-.4*k)}px) scale(${1+.02*sw})`;
+ sky.style.transform=`translateY(${-bh*.03*(1-k)}px)`;
+ const t=cl((p-.5)/.2);title.style.opacity=t;title.style.transform=`translateY(${(1-t)*bh*.025}px)`;
+ open.style.opacity=(1-cl(p/.28)).toFixed(3);
+ const c=cl((p-.78)/.16);copy.style.opacity=c;stage.style.setProperty('--sc',c);
+ copy.style.transform=(W>=900?'translateY(-50%) ':'')+`translateY(${(1-c)*14}px)`}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(draw)}},{passive:true});addEventListener('resize',measure);measure()})();
+</script>
+</body>
+</html>
