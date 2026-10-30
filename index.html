@@ -27,13 +27,13 @@ details.nav summary::-webkit-details-marker{display:none}
 details.nav div{position:absolute;bottom:100%;left:0;margin-bottom:6px;background:var(--cream);display:flex;flex-direction:column;min-width:180px}
 details.nav a{color:var(--night);text-decoration:none;padding:.7rem 1.1rem;font:500 .78rem "Jost",sans-serif;letter-spacing:.2em;text-transform:uppercase;border-top:1px solid rgba(35,36,58,.15)}
 @media(min-width:900px){details.nav{bottom:auto;top:52px;left:auto;right:22px}details.nav div{bottom:auto;top:100%;margin:6px 0 0;right:0;left:auto}}
-.hero{position:relative;height:340vh}
+.hero{position:relative;height:420vh}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#1c1d30}
 .book{position:absolute;left:0;top:0;width:var(--bw);aspect-ratio:1515/2334;overflow:visible}
 .cam{position:absolute;inset:0;transform-origin:56% 74%;will-change:transform}
 .cam img{position:absolute;display:block;left:0;width:100%;height:auto;will-change:transform,opacity}
-#sky{top:0}#sea{top:47.5%}#rocks{top:69.97%}
-#title{left:8.78%;top:10.07%;width:82.05%;opacity:0}
+#sky{top:0}#sea{top:47.5%;transform-origin:50% 0}#rocks{top:69.97%}
+.ttl{position:absolute;left:8.78%;top:10.07%;width:82.05%}.cam .ttl img{position:relative;opacity:0}
 .edge{position:absolute;inset:0;pointer-events:none;box-shadow:0 0 0 100vmax #1c1d30;clip-path:inset(0)}
 .open{position:absolute;left:20px;right:20px;top:50%;transform:translateY(-50%);text-align:center;will-change:opacity;z-index:3}
 .open p{font-style:italic;font-size:clamp(1.7rem,7vw,3.3rem);line-height:1.18;text-shadow:0 2px 24px #000}
@@ -79,7 +79,7 @@ footer{text-align:center;color:var(--soft);font:400 .85rem "Jost",sans-serif;pad
         <img id="sky" src="img/sky.jpg" alt="" width="1000" height="1000">
         <img id="sea" src="img/sea.webp" alt="" width="1000" height="1000">
         <img id="rocks" src="img/rocks.webp" alt="" width="1000" height="1000">
-        <img id="title" src="img/title.webp" alt="" width="1000" height="300">
+        <div class="ttl"><img id="t1" src="img/t1.webp" alt="" width="820" height="162"><img id="t2" src="img/t2.webp" alt="" width="820" height="101"><img id="t3" src="img/t3.webp" alt="" width="820" height="253"></div>
       </div>
     </div>
     <div class="copy" id="copy">
@@ -141,7 +141,7 @@ footer{text-align:center;color:var(--soft);font:400 .85rem "Jost",sans-serif;pad
 </main>
 <footer>A mockup made by Sparsh Saini for Lorna Marlow. Not affiliated, not live.</footer>
 <script>
-(()=>{const hero=document.querySelector('.hero'),stage=document.getElementById('stage'),book=document.getElementById('book'),cam=document.getElementById('cam'),sky=document.getElementById('sky'),sea=document.getElementById('sea'),title=document.getElementById('title'),open=document.getElementById('open'),copy=document.getElementById('copy');
+(()=>{const hero=document.querySelector('.hero'),stage=document.getElementById('stage'),book=document.getElementById('book'),cam=document.getElementById('cam'),sky=document.getElementById('sky'),sea=document.getElementById('sea'),ws=[1,2,3].map(i=>document.getElementById('t'+i)),open=document.getElementById('open'),copy=document.getElementById('copy');
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 let W,H,bw,bh,rx,ry,ht,dx,dy,tick=false;const S=3.4,cl=v=>Math.max(0,Math.min(1,v)),eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 function measure(){W=innerWidth;H=stage.clientHeight;const d=W>=900;bw=d?Math.min(H*.86/1.5406,W*.36):Math.min(W*.8,H*.62/1.5406);bh=bw*1.5406;
@@ -149,15 +149,15 @@ function measure(){W=innerWidth;H=stage.clientHeight;const d=W>=900;bw=d?Math.mi
  dx=(d?W*.3:W/2)-(rx+bw*.56);dy=H/2-(ry+bh*.74);ht=hero.offsetHeight-H;
  book.style.clipPath=`inset(0)`;draw()}
 function draw(){tick=false;const p=cl((scrollY-hero.offsetTop)/ht);
- const k=eio(cl(p/.64));
+ // the camera draws back out of the wave gap, then three swells break through it; each one, drawing back, leaves a word of the title in the sky
+ const k=eio(cl(p/.3));let sw=Math.sin(Math.PI*cl(p/.3))*.6;
+ for(let i=0;i<3;i++){const x=cl((p-.24-i*.19)/.2);sw+=Math.sin(Math.PI*x);
+  const w=cl((x-.5)/.45);ws[i].style.opacity=w.toFixed(3);ws[i].style.transform=`translateY(${(1-w)*bh*.06}px)`}
  cam.style.transform=`translate(${dx*(1-k)}px,${dy*(1-k)}px) scale(${1+(S-1)*(1-k)})`;
- // two swells come in over the rocks and draw back; the sea plane rides behind them
- const sw=.5-.5*Math.cos(p*Math.PI*6);
- sea.style.transform=`translateY(${-bh*.03*sw*(1-.4*k)}px) scale(${1+.02*sw})`;
+ sea.style.transform=`translateY(${-bh*.035*sw}px) scale(${1+.07*sw})`;
  sky.style.transform=`translateY(${-bh*.03*(1-k)}px)`;
- const t=cl((p-.5)/.2);title.style.opacity=t;title.style.transform=`translateY(${(1-t)*bh*.025}px)`;
- open.style.opacity=(1-cl(p/.28)).toFixed(3);
- const c=cl((p-.78)/.16);copy.style.opacity=c;stage.style.setProperty('--sc',c);
+ open.style.opacity=(1-cl(p/.14)).toFixed(3);
+ const c=cl((p-.84)/.13);copy.style.opacity=c;stage.style.setProperty('--sc',c);
  copy.style.transform=(W>=900?'translateY(-50%) ':'')+`translateY(${(1-c)*14}px)`}
 addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(draw)}},{passive:true});addEventListener('resize',measure);measure()})();
 </script>
